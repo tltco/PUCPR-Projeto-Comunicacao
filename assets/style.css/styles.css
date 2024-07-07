@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap');
+
+/* VARAIBLES */
+:root{
+  --accent: hsl(344, 100%, 50%);
+  --accent-alt: hsl(344, 100%, 86%);
+  --dark: hsl(195, 100%, 8%);
+  --gray: hsl(195, 7%, 35%);
+}
+
+/* SETUP */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+a{
+  text-decoration: none;
+}
+
+h1{
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--dark);
+}
+
+h2{
+  font-size: 2rem;
+  color: var(--dark);
+}
+
+h3{
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h4{
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--dark);
+}
+
+.paragraph{
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gray);
+}
+
+img, 
+.frame{
+  opacity: 0.9;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.hr{
+  width: 100%;
+  height: 2rem;
+  margin: 1rem;
+  background-image: url('../img/hr.png');
+  background-position: center;
+  background-size:auto;
+  background-repeat: no-repeat;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--dark);
+}
+
+header{
+  height: 3.5rem;
+}
+
+header,
+header .nav{
+  display: flex;
+  align-items: center;
+  width: 100vw;
+}
+
+header .nav{
+  justify-content: center;
+  gap: 4rem;
+  padding: 1rem;
+}
+
+header .nav a{
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--gray);
+  cursor: pointer;
+
+  &:hover {
+    font-weight: 700;
+    color: var(--dark);
+  }
+
+  &:focus {
+    color: var(--accent);
+  }
+}
+
+main{
+  display: grid;
+  justify-items: center;
+  gap: 2rem;
+}
+
+main .section{
+  width: 70%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+main .section .circle{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section .circle .text{
+  width: 100%;
+  height: 100%;
+  left: 960px;
+  bottom: 80px;
+  position: absolute;
+  animation: motion 10s linear infinite;
+}
+
+.circle .text span{
+  position: absolute;
+  left: 50%;
+  font-size: 1.6em;
+  font-weight: 900;
+  color: var(--accent);
+  transform-origin: 0 100px;
+}
+
+.section .frame{
+  width: 100%;
+  height: 290px;
+  margin-top: 2rem;
+  background-image: url('../img/team-liquid-fx.png');
+  background-position: center;
+  background-size: cover;
+  border-radius: .25rem;
+}
+
+.section .content{
+  flex-direction: column;
+}
+
+.section .content,
+.section .container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
+  gap: 1rem;
+}
+
+.container .box{
+  width: 100%;
+  height: 290px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  text-align: center;
+  border: 2px solid var(--accent-alt);
+  border-radius: .5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: hsl(350, 100%, 99%);
+    border: 2px solid var(--accent);
+    transform: scale(1.1);
+    transition: all .4s ease-out;
+  }
+}
+
+#gallery{
+  width: 100%;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  position: relative;
+  width: 60%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: transform all .4s ease;
+  cursor: pointer;
+}
+
+#card-item {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: all .4s ease-out;
+
+  &:hover{
+    width: auto;
+  }
+}
+
+#img-flow{
+  width: 70%;
+}
+
+.post{
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: self-start;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.post h2{
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+
+.post .post-content{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.post-content .paragraph,
+.post-content h4{
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #FF6690;
+}
+
+#news{
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  border-radius: .5rem;
+  border: 1px solid var(--dark);
+  cursor: pointer;
+
+  &:hover{
+    background-color: hsl(206, 39%, 93%);
+  }
+}
+
+#news img{
+  width: 160px;
+  border-radius: .5rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.info{
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.info p{
+  color: var(--dark);
+}
+
+#socials{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#socials span{
+  width: 140px;
+  padding: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  font-weight: 700;
+  color: var(--dark);
+  border-radius: 2rem;
+  cursor: pointer;
+
+  &:hover{
+    background-color: hsl(206, 39%, 93%);
+  }
+}
+
+footer,
+.dev-notes{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.dev-notes{
+  width: 60%;
+  gap: 1rem;
+  background-color: #fffefe;
+  border-radius: .5rem;
+  border: 1px solid var(--accent);
+}
+
+/*PAGINA DE NOTICIAS*/
+.ref{
+  display: flex;
+  font-weight: 500;
+  padding: 1rem;
+  color: var(--dark);
+  background-color: hsl(206, 39%, 93%);
+  border-left: 3px solid var(--dark);
+}
+
+@keyframes motion {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
